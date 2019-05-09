@@ -20,10 +20,10 @@ public class DemoApplication {
 		return "Welcome to Open Shift";
 	}
 	
-	@GetMapping("/{input}")
+	@GetMapping("/{name}")
 
 	public String welcomeNote(@PathVariable String name) {
-		return "Hi" + name + "Welcome to Open Shift";
+		return "Hi" + " " + name + " Application deployed successfully.";
 	}
 
 }
