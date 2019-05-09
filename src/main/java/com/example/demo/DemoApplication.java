@@ -3,6 +3,7 @@ package com.example.demo;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -13,10 +14,16 @@ public class DemoApplication {
 		SpringApplication.run(DemoApplication.class, args);
 	}
 
-	@GetMapping("/test")
+	@GetMapping("/")
 
 	public String welcomeTest() {
 		return "Welcome to Open Shift";
+	}
+	
+	@GetMapping("/{input}")
+
+	public String welcomeNote(@PathVariable String name) {
+		return "Hi" + name + "Welcome to Open Shift";
 	}
 
 }
